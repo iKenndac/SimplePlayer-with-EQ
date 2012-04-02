@@ -31,10 +31,29 @@
  */
 
 #import "SimplePlayerAppDelegate.h"
+#import "EQCoreAudioController.h"
+
 //#error Please get an appkey.c file from developer.spotify.com and remove this error before building.
 #include "appkey.c"
 
+@interface SimplePlayerAppDelegate ()
+
+@property (nonatomic, readwrite, strong) EQCoreAudioController *audioController;
+
+@end
+
 @implementation SimplePlayerAppDelegate
+
+@synthesize eqSlider1;
+@synthesize eqSlider2;
+@synthesize eqSlider3;
+@synthesize eqSlider4;
+@synthesize eqSlider5;
+@synthesize eqSlider6;
+@synthesize eqSlider7;
+@synthesize eqSlider8;
+@synthesize eqSlider9;
+@synthesize eqSlider10;
 
 @synthesize playbackProgressSlider;
 @synthesize trackURLField;
@@ -43,6 +62,7 @@
 @synthesize loginSheet;
 @synthesize window;
 @synthesize playbackManager;
+@synthesize audioController;
 
 -(void)applicationWillFinishLaunching:(NSNotification *)notification {
 	
@@ -58,7 +78,10 @@
 	
 	[[SPSession sharedSession] setDelegate:self];
 	
-	self.playbackManager = [[SPPlaybackManager alloc] initWithPlaybackSession:[SPSession sharedSession]];
+	self.audioController = [[EQCoreAudioController alloc] init];
+	
+	self.playbackManager = [[SPPlaybackManager alloc] initWithAudioController:self.audioController
+															  playbackSession:[SPSession sharedSession]];
 	
 	[self addObserver:self
 		   forKeyPath:@"playbackManager.trackPosition"
@@ -199,6 +222,26 @@
 	if (self.playbackManager.currentTrack != nil && self.playbackManager.isPlaying) {
 		[self.playbackManager seekToTrackPosition:[sender doubleValue]];
 	}
+}
+
+#pragma mark - EQ
+
+-(IBAction)eqSliderDidChange:(id)sender {
+	
+	NSMutableArray *bands = [NSMutableArray arrayWithCapacity:10];
+	
+	[bands addObject:[NSNumber numberWithFloat:self.eqSlider1.floatValue]];
+	[bands addObject:[NSNumber numberWithFloat:self.eqSlider2.floatValue]];
+	[bands addObject:[NSNumber numberWithFloat:self.eqSlider3.floatValue]];
+	[bands addObject:[NSNumber numberWithFloat:self.eqSlider4.floatValue]];
+	[bands addObject:[NSNumber numberWithFloat:self.eqSlider5.floatValue]];
+	[bands addObject:[NSNumber numberWithFloat:self.eqSlider6.floatValue]];
+	[bands addObject:[NSNumber numberWithFloat:self.eqSlider7.floatValue]];
+	[bands addObject:[NSNumber numberWithFloat:self.eqSlider8.floatValue]];
+	[bands addObject:[NSNumber numberWithFloat:self.eqSlider9.floatValue]];
+	[bands addObject:[NSNumber numberWithFloat:self.eqSlider10.floatValue]];
+	
+	[self.audioController applyBandsToEQ:bands];
 }
 
 @end

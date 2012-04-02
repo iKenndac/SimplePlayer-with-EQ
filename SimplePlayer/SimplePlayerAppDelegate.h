@@ -44,6 +44,16 @@
 	SPPlaybackManager *playbackManager;
 	NSTextField *__weak trackURLField;
 	NSSlider *__weak playbackProgressSlider;
+	__weak NSSlider *eqSlider1;
+	__weak NSSlider *eqSlider2;
+	__weak NSSlider *eqSlider3;
+	__weak NSSlider *eqSlider4;
+	__weak NSSlider *eqSlider5;
+	__weak NSSlider *eqSlider6;
+	__weak NSSlider *eqSlider7;
+	__weak NSSlider *eqSlider8;
+	__weak NSSlider *eqSlider9;
+	__weak NSSlider *eqSlider10;
 }
 
 @property (weak) IBOutlet NSSlider *playbackProgressSlider;
@@ -62,5 +72,20 @@
 
 - (IBAction)playTrack:(id)sender;
 - (IBAction)seekToPosition:(id)sender;
+
+#pragma mark - EQ
+
+-(IBAction)eqSliderDidChange:(id)sender;
+
+@property (weak) IBOutlet NSSlider *eqSlider1;
+@property (weak) IBOutlet NSSlider *eqSlider2;
+@property (weak) IBOutlet NSSlider *eqSlider3;
+@property (weak) IBOutlet NSSlider *eqSlider4;
+@property (weak) IBOutlet NSSlider *eqSlider5;
+@property (weak) IBOutlet NSSlider *eqSlider6;
+@property (weak) IBOutlet NSSlider *eqSlider7;
+@property (weak) IBOutlet NSSlider *eqSlider8;
+@property (weak) IBOutlet NSSlider *eqSlider9;
+@property (weak) IBOutlet NSSlider *eqSlider10;
 
 @end

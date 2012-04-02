@@ -17,6 +17,8 @@
 		506DA59A13718B72009A8D1F /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506DA59913718B72009A8D1F /* CoreAudio.framework */; };
 		50ECF3EA1529C4BF001DD1CF /* CocoaLibSpotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50ECF3E91529C4BB001DD1CF /* CocoaLibSpotify.framework */; };
 		50ECF3ED1529C4D0001DD1CF /* CocoaLibSpotify.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 50ECF3E91529C4BB001DD1CF /* CocoaLibSpotify.framework */; };
+		50ECF3F01529C608001DD1CF /* EQCoreAudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50ECF3EF1529C608001DD1CF /* EQCoreAudioController.m */; };
+		50ECF4101529CD21001DD1CF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50ECF40F1529CD21001DD1CF /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,9 @@
 		506DA59513718B47009A8D1F /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = /System/Library/Frameworks/AudioUnit.framework; sourceTree = "<absolute>"; };
 		506DA59913718B72009A8D1F /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = /System/Library/Frameworks/CoreAudio.framework; sourceTree = "<absolute>"; };
 		50ECF3E11529C4BB001DD1CF /* CocoaLibSpotify Mac Framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CocoaLibSpotify Mac Framework.xcodeproj"; path = "cocoalibspotify/Mac Framework/CocoaLibSpotify Mac Framework.xcodeproj"; sourceTree = "<group>"; };
+		50ECF3EE1529C608001DD1CF /* EQCoreAudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EQCoreAudioController.h; sourceTree = "<group>"; };
+		50ECF3EF1529C608001DD1CF /* EQCoreAudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EQCoreAudioController.m; sourceTree = "<group>"; };
+		50ECF40F1529CD21001DD1CF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50ECF4101529CD21001DD1CF /* AudioToolbox.framework in Frameworks */,
 				50ECF3EA1529C4BF001DD1CF /* CocoaLibSpotify.framework in Frameworks */,
 				506DA59A13718B72009A8D1F /* CoreAudio.framework in Frameworks */,
 				506DA59613718B47009A8D1F /* AudioUnit.framework in Frameworks */,
@@ -105,6 +111,7 @@
 		5006F152137161D800AF4418 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50ECF40F1529CD21001DD1CF /* AudioToolbox.framework */,
 				506DA59913718B72009A8D1F /* CoreAudio.framework */,
 				506DA59513718B47009A8D1F /* AudioUnit.framework */,
 				5006F153137161D800AF4418 /* Cocoa.framework */,
@@ -129,6 +136,8 @@
 				5006F165137161D800AF4418 /* SimplePlayerAppDelegate.h */,
 				5006F166137161D800AF4418 /* SimplePlayerAppDelegate.m */,
 				5006F168137161D800AF4418 /* MainMenu.xib */,
+				50ECF3EE1529C608001DD1CF /* EQCoreAudioController.h */,
+				50ECF3EF1529C608001DD1CF /* EQCoreAudioController.m */,
 			);
 			path = SimplePlayer;
 			sourceTree = "<group>";
@@ -238,6 +247,7 @@
 			files = (
 				5006F161137161D800AF4418 /* main.m in Sources */,
 				5006F167137161D800AF4418 /* SimplePlayerAppDelegate.m in Sources */,
+				50ECF3F01529C608001DD1CF /* EQCoreAudioController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
