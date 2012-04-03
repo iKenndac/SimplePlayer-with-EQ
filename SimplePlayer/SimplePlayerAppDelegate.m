@@ -33,7 +33,7 @@
 #import "SimplePlayerAppDelegate.h"
 #import "EQCoreAudioController.h"
 
-//#error Please get an appkey.c file from developer.spotify.com and remove this error before building.
+#error Please get an appkey.c file from developer.spotify.com and remove this error before building.
 #include "appkey.c"
 
 @interface SimplePlayerAppDelegate ()
